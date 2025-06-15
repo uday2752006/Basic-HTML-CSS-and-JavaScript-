@@ -19,7 +19,7 @@ Welcome to my colorful, interactive webpage - my very first web development proj
 ## 🚀 How to Use
 
 1. **Download the files**
-   - Save the `Task-1.html` file
+   - Save the `TASK-1.html` file
    - (Optional) Create a folder for images if you add your own
 
 2. **Open the webpage**
