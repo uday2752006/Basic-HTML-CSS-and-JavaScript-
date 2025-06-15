@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Awesome Webpage 🌟</title>
+    <style>
+        /* Internal CSS Styling */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #74b9ff;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .fun-fact {
+            background-color: #ffeaa7;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none; /* Hidden until button click */
+        }
+
+        .btn {
+            background-color: #74b9ff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0984e3;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            color: white;
+        }
+
+        .dark-mode .container {
+            background-color: #2d3436;
+            color: white;
+        }
+
+        a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #e84393;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👋 Hello World!</h1>
+        <h2>Welcome to My First Webpage</h2>
+
+        <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" alt="Funny coding GIF" class="profile-img">
+        
+        <p>Hi there! I'm <strong>a web development intern</strong> on a mission to learn HTML, CSS, and JavaScript.</p>
+        <p>Did you know? The first website went live in 1991 and was about... <span class="highlight">the World Wide Web project itself!</span></p>
+        
+        <div class="fun-fact" id="funFact">
+            <h3>🤯 Fun Fact!</h3>
+            <p>There are approximately 1.8 billion websites in the world, but only about 200 million are active!</p>
+        </div>
+        
+        <button class="btn" id="factBtn">Show Me a Fun Fact</button>
+        <button class="btn" id="modeBtn">Toggle Dark Mode</button>
+        <button class="btn" id="alertBtn">Click for Surprise!</button>
+        
+        <p>Check out my favorite learning resource: <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></p>
+    </div>
+
+    <!-- Internal Java Script -->
+    <script>
+        // Show/hide fun fact
+        document.getElementById('factBtn').addEventListener('click', function() {
+            const funFact = document.getElementById('funFact');
+            if (funFact.style.display === 'block') {
+                funFact.style.display = 'none';
+                this.textContent = 'Show Me a Fun Fact';
+            } else {
+                funFact.style.display = 'block';
+                this.textContent = 'Hide Fun Fact';
+            }
+        });
+
+        // Dark mode toggle
+        document.getElementById('modeBtn').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            this.textContent = document.body.classList.contains('dark-mode') 
+                ? 'Light Mode ☀️' 
+                : 'Dark Mode 🌙';
+        });
+
+        // Alert button
+        document.getElementById('alertBtn').addEventListener('click', function() {
+            alert('🎉 Congratulations! You found the secret button!\n\nWelcome to the world of JavaScript!');
+        });
+
+        // Bonus: Change title on blur
+        let originalTitle = document.title;
+        window.addEventListener('blur', () => {
+            document.title = "👀 Don't leave me!";
+        });
+        
+        window.addEventListener('focus', () => {
+            document.title = originalTitle;
+        });
+    </script>
+</body>
+</html>
